@@ -1,0 +1,217 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    font-size: 1.5rem;
+    background-color: #083D77;
+    color: #EBEBD3;
+    display: grid;
+    grid:
+        "header header header header"auto "...... lists active ......"auto / 1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+}
+
+.title {
+    grid-area: header;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #D5896F;
+}
+
+.todo-header {
+    padding: var(--spacer);
+    background-color: #D9D9AB;
+    color: #D5896F;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.all-tasks {
+    grid-area: lists;
+    color: #7F95D1;
+}
+
+.task-list {}
+
+.active-list {
+    font-weight: 700;
+    color: #D5896F;
+    list-style: disc;
+}
+
+.todo-body {
+    padding: var(--spacer);
+    position: relative;
+}
+
+.todo-list {
+    --spacer: 1rem;
+    grid-area: active;
+    background: #EBEBD3;
+    color: #7F95D1;
+    border: 1px solid #083D77;
+    border-radius: 2rem;
+}
+
+form {
+    display: flex;
+}
+
+.new-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid #EBEBD3;
+    color: #EBEBD3;
+    font-size: 1rem;
+    outline: none;
+    transition: border-bottom 100ms ease-in;
+    order: 2;
+}
+
+.task-title,
+.task-count {
+    padding: 0;
+    margin: 0;
+}
+
+.new-input {
+    color: #D5896F;
+}
+
+
+.new-input:focus {
+    border-bottom: 2.0px solid #D5896F;
+}
+
+.new-input:focus::placeholder {
+    color: #D5896F;
+    opacity: 0.3;
+}
+
+.btn-delete,
+.btn-list,
+.btn-task {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: #7F95D1;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    font-size: 1rem;
+    transition: color 100ms ease-in;
+}
+.btn-delete:hover{
+    color: #D5896F;
+    opacity: 0.7;
+}
+.btn-list,
+.btn-task {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-right: 0.25em;
+    color: #D5896F;
+    transition: opacity 0.2s ease-in;
+}
+
+.btn-list:hover,
+.btn-task:hover {
+    opacity: 0.7;
+}
+
+.list-name {
+    cursor: pointer;
+}
+
+.list-name:hover {
+    color: #D5896F;
+    opacity: 0.7;
+}
+
+[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.task label {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.task {
+    position: relative;
+    margin-bottom: 1.25em;
+}
+
+.task::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -0.5em;
+    height: 1px;
+    background: #D9D9AB;
+    opacity: 0.5;
+}
+
+.custom-checkbox {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    border: 1.5px solid #083D77;
+    border-radius: 50%;
+    margin-right: 1em;
+    transform: scale(1);
+    transition: transform 150ms ease-in-out;
+}
+
+.task:hover {
+    color: #D5896F;
+}
+
+.task:hover .custom-checkbox,
+[type="checkbox"]:focus+label .custom-checkbox {
+    transform: scale(1.2);
+}
+
+[type="checkbox"]:checked+label {
+    opacity: 0.5;
+}
+
+[type="checkbox"]:checked+label .custom-checkbox {
+    background: #D5896F;
+    border-color: 1.5px solid #D5896F;
+    box-shadow: inset 0 0 0 2px #EBEBD3;
+}
+
+.task label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(50% - 1.5px);
+    left: 1.75em;
+    height: 3px;
+    background: #D5896F;
+    height: 3px;
+    background: #D5896F;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 200ms ease-in-out;
+}
+
+[type="checkbox"]:checked+label::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.clear-tasks {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -35px;
+}
