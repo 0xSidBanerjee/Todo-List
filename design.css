@@ -47,7 +47,7 @@ body {
     --spacer: 1rem;
     grid-area: active;
     background: #EBEBD3;
-    color: #7F95D1;
+    color: #D5896F;
     border: 1px solid #083D77;
     border-radius: 2rem;
 }
@@ -59,12 +59,16 @@ form {
 .new-input {
     background: transparent;
     border: none;
-    border-bottom: 1.5px solid #EBEBD3;
+    border-bottom: 1.5px solid #083D77;
     color: #EBEBD3;
     font-size: 1rem;
     outline: none;
     transition: border-bottom 100ms ease-in;
     order: 2;
+}
+
+.create-new-task .new-input {
+    border-bottom: 1.5px solid #EBEBD3;
 }
 
 .task-title,
@@ -101,10 +105,12 @@ form {
     font-size: 1rem;
     transition: color 100ms ease-in;
 }
-.btn-delete:hover{
+
+.btn-delete:hover {
     color: #D5896F;
     opacity: 0.7;
 }
+
 .btn-list,
 .btn-task {
     font-size: 1.5rem;
