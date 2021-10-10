@@ -19,7 +19,72 @@
         <ul style="list-style: circle;">
             <li class="list-name active-list">XLSX-JSON</li>
             <li class="list-name">Work</li>
-            <li class="list-name">Grocery</li>
+            <li class="list-name">Grocery</li><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <title>ToDo List</title>
+</head>
+
+<body>
+    <h1 class="title">Stuffs I need to do</h1>
+    <div class="all-tasks">
+        <h2 class="task-list">My list</h2>
+        <ul class="task-list" style="list-style: circle;" data-lists></ul>
+
+        <form action="" data-new-list-form>
+            <input type="text" name="new-list" data-new-list-input placeholder="Add new list" class="new-input">
+            <button type="submit" class="btn-list">+</button>
+        </form>
+    </div>
+
+    <div class="todo-list" data-list-display-container>
+        <div class="todo-header">
+            <h2 class="task-title" data-list-title>XLSX-JSON</h2>
+            <p class="task-count" data-list-count>3 Tasks remaining</p>
+        </div>
+        <div class="todo-body">
+            <div class="tasks" data-tasks></div>
+
+            <div class="create-new-task">
+                <form action="" data-new-task-form>
+                    <input type="text" data-new-task-input name="new-task" placeholder="Add new task" class="new-input">
+                    <button type="submit" class="btn-task">+</button>
+                </form>
+            </div>
+
+            <div class="clear-tasks">
+                <button class="btn-delete" data-clear-complete-tasks-button>
+                    Clear completed tasks
+                </button>
+                <button class="btn-delete" data-delete-list-button>
+                    Delete list
+                </button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox">
+            <label>
+                <span class="custom-checkbox"></span>
+            </label>
+        </div>
+        </div>
+    </template>
+</body>
+
+</html>
         </ul>
         <form action="">
             <input type="text" name="new-list" placeholder="Add new list" class="new-input">
